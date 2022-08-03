@@ -1,0 +1,17 @@
+<p  (click)="ChangeCounter( )">{{title}} {{ counter}}</p>
+
+<ng-container></ng-container>
+
+<ng-container [ngSwitch]="counter % 2">
+  <ng-container *ngSwitchCase="0">
+    <h3 [style.font-size]="(12 + counter) + 'px'"  [style.color]="'red'">我是標題1</h3>
+  </ng-container>
+  <ng-container *ngSwitchCase="1">
+    <h3 [class.highlight]="counter % 2 == 0">我是標題2</h3>
+  </ng-container>
+  <div *ngSwitchDefault>NA</div>
+</ng-container>
+
+<h3 [class.highlight]="counter % 2 == 0" *ngIf="counter % 2 == 0">我是標題3</h3>
+
+

@@ -1,0 +1,13 @@
+
+<div>{{idx}}</div>
+<div>{{item.id}}</div>
+<div >{{item.name|lowercase}} </div>
+<input  type="text" size="70"
+[value]="newName"
+(keyup.enter)="doEdit($any($event.target).value)"
+(keyup.escape)="$any($event.target).value = newName"
+>
+<div>{{item['dept']}}</div>
+<button (click)="DeleteArticle()">Delete</button>
+<button *ngIf="!isEdit" (click)="isEdit=true">編輯name</button>
+<button *ngIf="isEdit" (click)="isEdit=false">取消編輯name</button>

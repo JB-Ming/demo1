@@ -1,0 +1,4 @@
+<div *ngFor="let item of data; let  idx=index">
+<app-article-header [item]="item" [idx]="idx" (delete)="doDelete(item)" (nameChanged)="changedName($event)"></app-article-header>
+<app-article-body [item]="item"></app-article-body>
+</div>
